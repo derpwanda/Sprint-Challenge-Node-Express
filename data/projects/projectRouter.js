@@ -39,8 +39,9 @@ router.get('/:id/actions', (req, res) => {
 
 })
 
-// create/add post
+// create/add project
 router.post('/', (req, res) => {
+  console.log('body:', req.body);
   projectsDb.insert(req.body)
     .then(project => {
       res.status(200).json(project);

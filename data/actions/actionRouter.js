@@ -30,6 +30,7 @@ router.get('/:id', (req, res) => {
 
 // create/add action
 router.post('/', (req, res) => {
+  console.log('body:', req.body);
   actionsDb.insert(req.body)
     .then(action => {
       res.status(200).json(action);
